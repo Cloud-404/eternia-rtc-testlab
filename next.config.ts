@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
@@ -12,6 +11,8 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  // Allow livekit-client to be bundled correctly in server components boundary
+  serverExternalPackages: ["livekit-server-sdk"],
 };
 
 export default nextConfig;

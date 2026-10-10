@@ -42,3 +42,9 @@ export function validateDisplayName(name: string): string | null {
   if (trimmed.length > 40) return "Display name is too long (max 40 characters).";
   return null;
 }
+
+/** Validates a demo access code — returns an error message or null. */
+export function validateAccessCode(code: string): string | null {
+  if (!code || code.trim().length === 0) return "Demo access code is required.";
+  return null;
+}
